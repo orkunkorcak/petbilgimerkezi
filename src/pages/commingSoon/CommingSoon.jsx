@@ -3,6 +3,15 @@ import css from "./CommingSoon.module.css";
 function CommingSoon() {
   return (
     <>
+      <div className={css.blurOverlay}>
+        <div className={css.blurOverlayContent}></div>
+        <img
+          src="../../../src/images/pbm-logo.png"
+          alt="logo"
+          className={css.logoBlur}
+        />
+        <h1 className={css.blurOverlayTitle}>Çok Yakında Başlıyoruz!</h1>
+      </div>
       <header>
         <nav className={css.navbar}>
           <img
