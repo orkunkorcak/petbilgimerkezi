@@ -6,7 +6,7 @@ function CommingSoon() {
       <div className={css.blurOverlay}>
         <div className={css.blurOverlayContent}></div>
         <img
-          src="../../../src/images/pbm-logo.png"
+          src="/images/pbm-logo.png"
           alt="logo"
           className={css.logoBlur}
         />
@@ -15,7 +15,7 @@ function CommingSoon() {
       <header>
         <nav className={css.navbar}>
           <img
-            src="../../../src/images/pbm-logo.png"
+            src="/images/pbm-logo.png"
             alt="logo"
             className={css.logo}
           />
@@ -30,7 +30,7 @@ function CommingSoon() {
             </h1>
             <img
               className={css.heroImage}
-              src="../../../src/images/hero-img.png"
+              src="/images/hero-img.png"
               alt="heroImage"
             />
           </div>
