@@ -1,0 +1,28 @@
+
+.heroSection {
+  display: flex;
+  align-items: center;
+  height: 350px;
+  width: 100%;
+  background-color: #acd5de;
+}
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.heroTitle {
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  color: #292d54;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.heroImage {
+  width: 700px;
+  height: auto;
+  padding-top: 160px;
+}

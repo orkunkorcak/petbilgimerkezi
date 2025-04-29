@@ -1,0 +1,22 @@
+.popularTopic {
+    color:#ca5454;
+    font-size: 36px;
+    font-weight: 500;
+    padding: 20px;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+}
+.cardItems {
+    width: 320px;
+
+}
+.cardTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #292d54;
+    padding: 10px;
+}

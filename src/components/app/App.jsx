@@ -1,16 +1,16 @@
-import css from './App.module.css'
-// import { Routes, Route } from "react-router-dom";
-// import { lazy, Suspense } from "react";
-// import Navigation from "../navigation/Navigation";
-import CommingSoon from '../../pages/commingSoon/CommingSoon';
+import { Routes, Route } from "react-router-dom";
+import HomePage from "../../pages/home/HomePage";
+import Footer from "../footer/Footer";
 
 function App() {
-
   return (
     <>
-      <CommingSoon/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+      <Footer/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
