@@ -1,22 +1,47 @@
 .popularTopic {
-    color:#ca5454;
-    font-size: 36px;
-    font-weight: 500;
-    padding: 20px;
+  color: #ca5454;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 20px;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  text-decoration: underline;
 }
-.card{
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
 
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  gap: 20px;
 }
 .cardItems {
-    width: 320px;
-
+  width: 320px;
+  border: solid 1px #292d54;
+  box-shadow: 1px 1px 5px #292d54;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.cardItems:hover {
+  transform: scale(1.06) translateY(-8px);
+  box-shadow: 4px 8px 24px #292d5499;
+  z-index: 2;
+}
+
 .cardTitle {
-    font-size: 20px;
-    font-weight: 500;
-    color: #292d54;
-    padding: 10px;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #292d54;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
 }
