@@ -8,6 +8,12 @@
 .logo {
   width: 140px;
   height: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.logo:hover {
+  transform: scale(1.06) translateY(-3px);
+  z-index: 2;
+  cursor: url('/images/imlecwhite.png') 0 0, auto;
 }
 .registerButton {
   background-color: #ca5454;
