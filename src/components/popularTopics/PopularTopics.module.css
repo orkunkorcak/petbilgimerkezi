@@ -27,6 +27,7 @@
   transform: scale(1.06) translateY(-8px);
   box-shadow: 4px 8px 24px #292d5499;
   z-index: 2;
+  cursor: url('/images/imlecwhite.png') 0 0, auto;
 }
 
 .cardTitle {

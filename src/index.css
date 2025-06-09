@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f9fafa;
@@ -5,5 +6,5 @@ body {
   padding: 20px;
   justify-content: center;
   max-width: 1280px;
-  cursor: url('../public/images/imlecwhite.png');
+  cursor: url('/images/imlecwhite.png') 0 0, auto;
 }
