@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import NotFoundPage from "../../pages/notFoundPage/NotFoundPage";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 const HomePage = lazy(() => import("../../pages/home/HomePage"));
 const Footer = lazy(() => import("../footer/Footer"));
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/ucakla-seyehat" element={<UcaklaSeyehat />} />
