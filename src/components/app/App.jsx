@@ -19,6 +19,12 @@ const TitrasyonTesti = lazy(() =>
 );
 const CatPage = lazy(() => import("../../pages/kedi/CatPage"));
 const DogPage = lazy(() => import("../../pages/köpek/DogPage"));
+const CatVaccinationSchedule = lazy(() =>
+  import("../allTopics/CatVaccinationSchedule")
+);
+const DogVaccinationSchedule = lazy(() =>
+  import("../allTopics/DogVaccinationSchedule")
+);
 
 function App() {
   return (
@@ -33,8 +39,16 @@ function App() {
           />
           <Route path="/asilama-takvimi" element={<AsilamaTakvimi />} />
           <Route path="/kuduz-titrasyon-testi" element={<TitrasyonTesti />} />
-          <Route path="/kedi" element={<CatPage />} />
-          <Route path="/kopek" element={<DogPage />} />
+          <Route path="/kedi" element={<CatPage />}></Route>
+          <Route
+            path="/kedi-asi-takvimi"
+            element={<CatVaccinationSchedule />}
+          />
+          <Route path="/kopek" element={<DogPage />}></Route>
+          <Route
+            path="/kopek-asi-takvimi"
+            element={<DogVaccinationSchedule />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

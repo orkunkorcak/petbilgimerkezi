@@ -7,7 +7,7 @@ const PopularTopics = () => {
       <h2 className={css.popularTopic}> POPÜLER KONULAR</h2>
       <div className={css.card}>
         <Link to="/ucakla-seyehat" className={css.cardItems}>
-          <h3 className={css.cardTitle}>Uçakla Seyehat</h3>
+          <h3 className={css.cardTitle}>Uçakla Seyahat</h3>
           <img
             className={css.cardImage}
             src="/images/seyehat.png"

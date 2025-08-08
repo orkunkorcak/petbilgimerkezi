@@ -6,7 +6,6 @@ const MikrocipVePasaport = () => {
   return (
     <>
       <Navigation />
-      <h1>Mikroçip ve Pasaport Sayfası</h1>
       <MicrochipAndPassport />
     </>
   );

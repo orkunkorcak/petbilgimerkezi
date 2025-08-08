@@ -5,7 +5,6 @@ const UcaklaSeyehat = () => {
   return (
     <>
       <Navigation />
-      <h1>seyehat page</h1>
       <TravelByPlane />
     </>
   );

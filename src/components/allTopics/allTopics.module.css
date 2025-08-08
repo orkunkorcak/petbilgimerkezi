@@ -1,0 +1,29 @@
+.container {
+      font-family: "Comic Sans MS", sans-serif;
+      color: #292d54;
+      font-size: 24px;
+}
+h1 {
+      color: #ca5454;
+}
+h2 {
+      text-decoration: underline;
+}
+span {
+      font-weight: bold;
+}
+.link {
+      color: #ca5454;
+      text-decoration: none;
+      font-family: "Comic Sans MS", sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      border: 1px solid #ca5454;
+      padding: 5px;
+      margin: 5px;
+}
+.link:hover {
+      background-color: #ca5454;
+      color: white;
+      transition: 0.5s;
+}

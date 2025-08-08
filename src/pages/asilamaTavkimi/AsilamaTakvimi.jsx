@@ -6,7 +6,6 @@ const AsilamaTakvimi = () => {
   return (
     <>
       <Navigation />
-      <h1>Aşılama Takvimi Sayfası</h1>
       <VaccinationSchedule />
     </>
   );

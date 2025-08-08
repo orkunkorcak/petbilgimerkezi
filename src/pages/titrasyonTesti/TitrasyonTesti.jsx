@@ -6,7 +6,7 @@ const TitrasyonTesti = () => {
   return (
     <>
       <Navigation />
-      <h1>Titrasyon Testi Sayfası</h1>
+      
       <RabiesTitrationTest />
     </>
   );
