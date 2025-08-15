@@ -4,8 +4,8 @@ const MicrochipAndPassport = () => {
   return (
     <>
       <div className={css.container}>
-        <h1>Mikroçip ve Ev Hayvanı Pasaportu</h1>
-        <h2>Mikroçip Nedir?</h2>
+        <h1 className={css.h1}>Mikroçip ve Ev Hayvanı Pasaportu</h1>
+        <h2 className={css.h2}>Mikroçip Nedir?</h2>
         <p>
           Mikroçip, yaklaşık bir pirinç tanesi büyüklüğünde, medikal
           sertleştirilmiş camla kaplı, içerisinde RFID teknolojisi ile çalışan
@@ -17,14 +17,14 @@ const MicrochipAndPassport = () => {
           cihazla paylaşır. Bu numara artık sevimli dostunuzun TC kimlik
           numarası gibi kullanılacaktır.
         </p>
-        <h2>Mikroçip Nasıl Uygulanır?</h2>
+        <h2 className={css.h2}>Mikroçip Nasıl Uygulanır?</h2>
         <p>
           Mikroçipler, özel bir enjeksiyon iğnesi ile uygulanır. İğne steril
           ambalaj içinde gelir ve işlem anestezi gerektirmez, oldukça kısa
           sürer. Mikroçip, genellikle iki omuz arasındaki boşluğa (scapulalar
           arası cidago bölgesi) deri altına yerleştirilir.
         </p>
-        <h2>Mikroçip Sonrası Nelere Dikkat Edilmeli?</h2>
+        <h2 className={css.h2}>Mikroçip Sonrası Nelere Dikkat Edilmeli?</h2>
         <p>
           Uygulama sonrası evcil hayvanınız normal yaşantısına devam edebilir,
           genellikle herhangi bir yan etki görülmez. Nadiren uygulama bölgesinde
@@ -33,7 +33,9 @@ const MicrochipAndPassport = () => {
           dışarıda olup olmadığı hızlıca kontrol edilmelidir. Çip görünmüyorsa
           her şey yolunda demektir.
         </p>
-        <h2>Mikroçip Ne İşe Yarar? Üzerine Bilgi Kayıt Edilir mi?</h2>
+        <h2 className={css.h2}>
+          Mikroçip Ne İşe Yarar? Üzerine Bilgi Kayıt Edilir mi?
+        </h2>
         <p>
           Sanılanın aksine mikroçipin üzerine bilgi kayıt edilmez. Mikroçip
           yalnızca bir kimlik numarasıdır. Bu numara, PETVET adlı dijital
@@ -44,7 +46,7 @@ const MicrochipAndPassport = () => {
           işaretleri, mikroçip numarası ve pasaport seri numarası gibi bilgiler
           sisteme eklenir.
         </p>
-        <h2>Ev Hayvanı Pasaportu Nedir, Nasıl Alınır?</h2>
+        <h2 className={css.h2}>Ev Hayvanı Pasaportu Nedir, Nasıl Alınır?</h2>
         <p>
           Mikroçip uygulandıktan sonra, işlemi yapan veteriner kliniği ya da
           tarım müdürlükleri tarafından size turkuaz renkli Ev Hayvanı Pasaportu
@@ -52,7 +54,7 @@ const MicrochipAndPassport = () => {
           hayvanın kimlik bilgileri, sahip bilgileri, yapılan aşılar ve parazit
           uygulamaları yer alır.
         </p>
-        <h2>Türkiye'de Mikroçip Takma Zorunlu mu?</h2>
+        <h2 className={css.h2}>Türkiye'de Mikroçip Takma Zorunlu mu?</h2>
         <p>
           Evet. Türkiye'de tüm sahipli kedi, köpek ve gelinciklere mikroçip
           takılması ve PETVET sistemine kayıt edilmesi zorunludur. Yetişkin
@@ -60,7 +62,7 @@ const MicrochipAndPassport = () => {
           tarihten sonra kayıt yapılmamış hayvanlar için cezai işlem uygulanır
           ve veteriner kliniklerinde işlem yapılamaz.
         </p>
-        <h2>Zaten Mikroçipi Olan Hayvanlar Ne Yapmalı?</h2>
+        <h2 className={css.h2}>Zaten Mikroçipi Olan Hayvanlar Ne Yapmalı?</h2>
         <p>
           Eğer patili dostunuzun daha önceden veya yurt dışında takılmış bir
           mikroçipi varsa, bu mikroçipin PETVET sistemine tanımlanması gerekir.

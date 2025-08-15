@@ -5,7 +5,7 @@ const VaccinationSchedule = () => {
   return (
     <>
       <div className={css.container}>
-        <h1>Kedi ve Köpeklerde Aşılama: Sağlıklı Bir Yaşamın Temeli</h1>
+        <h1 className={css.h1}>Kedi ve Köpeklerde Aşılama: Sağlıklı Bir Yaşamın Temeli</h1>
         <p>
           Evcil hayvanlarımız bizim için sadece birer hayvan değil; aynı zamanda
           sadık dostlarımız, aile üyelerimizdir. Onların sağlıklı, uzun ve
@@ -14,7 +14,7 @@ const VaccinationSchedule = () => {
           uygulamaları ölümcül hastalıkların önlenmesinde hayati rol oynar.
         </p>
 
-        <h2>Aşı Nedir? Nasıl Çalışır?</h2>
+        <h2 className={css.h2}>Aşı Nedir? Nasıl Çalışır?</h2>
         <p>
           Aşılar, bağışıklık sistemine zararsız bir şekilde hastalığı tanıtıp,
           ileride aynı mikroorganizmayla karşılaşıldığında güçlü bir savunma
@@ -22,7 +22,7 @@ const VaccinationSchedule = () => {
           hastalanmaz ya da hastalığı çok hafif atlatır.
         </p>
 
-        <h2>Kedi ve Köpeklerde Neden Aşılama Yapılmalı?</h2>
+        <h2 className={css.h2}>Kedi ve Köpeklerde Neden Aşılama Yapılmalı?</h2>
 
         <h4>1. Ölümcül Hastalıklara Karşı Koruma</h4>
         <p>

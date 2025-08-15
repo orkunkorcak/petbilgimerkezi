@@ -7,14 +7,14 @@ const DogVaccinationSchedule = () => {
     <>
       <Navigation />
       <div className={css.container}>
-        <h1>Köpek Aşı Takvimi</h1>
+        <h1 className={css.h1}>Köpek Aşı Takvimi</h1>
         <p>
           Yavru köpeklerin sağlıklı bir bağışıklık sistemi geliştirebilmesi için
           aşı takvimi dikkatle takip edilmelidir. Aşılamaya başlamadan önce,
           köpeğinizin genel sağlık durumu ve kilosu veteriner hekiminiz
           tarafından değerlendirilmelidir.
         </p>
-        <h2>Yeni Doğan Köpeklerde Aşılamaya Başlama</h2>
+        <h2 className={css.h2}>Yeni Doğan Köpeklerde Aşılamaya Başlama</h2>
         <p>
           Yeni doğan köpeklerin yaklaşık 45 gün boyunca anne sütü alması
           önerilir. Bu sürenin sonunda, yavrunun kilosu uygunsa (minimum 800
@@ -76,14 +76,14 @@ const DogVaccinationSchedule = () => {
         </p>
         <h4>Tarihli Örnek Aşı Takvimi (1 Ocak Doğumlu Yavru Köpek)</h4>
         <DogVaccineTable />
-        <h2>Yetişkin Köpeklerde Aşılama</h2>
+        <h2 className={css.h2}>Yetişkin Köpeklerde Aşılama</h2>
         <p>
           Köppekler bir yaşından sonra aşılama artık rutin tarihlerde yapılır.
           Karma, corona,bronşin, lyme ve kuduz aşıları yılda bir sefer yapılır. Son
           yaptırdığınız tarihe göre her sene aynı tarihte tekrarı yapılır.
           Yukarıdaki tabloya göre her 12 Nisan'da karma, her 24 Mayıs'ta corona, 14 Haziran'da kuduz, 26 Temmuz'da bronşin ve 6 Eylül'de lyme aşıları tekrarı yapılacak.
         </p>
-        <h2>Parazit Uygulamaları</h2>
+        <h2 className={css.h2}>Parazit Uygulamaları</h2>
         <p>Köpekler için çeşitli parazit uygulama methotları bulunmaktadır.
           İç ve dış parazit için ayrı ayrı tablet veya damla uygulayabilir ya da ikisinin birlikte olduğu tabletler 
           kullanabilirsiniz. Parazit uygulamaları genellikle iki ayda bir tekrarlanması önerilir. Ancak bazı preparatlar üç aylık seçeneklerde de bulunabilir.

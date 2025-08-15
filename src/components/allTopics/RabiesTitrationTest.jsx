@@ -3,7 +3,7 @@ const RabiesTitrationTest = () => {
   return (
     <>
       <div className={css.container}>
-        <h1>Kuduz Titrasyon Testi</h1>
+        <h1 className={css.h1}>Kuduz Titrasyon Testi</h1>
         <p>
           Kuduz titrasyon testi, vücudun kuduz hastalığına karşı geliştirdiği
           bağışıklık seviyesini ölçen bir testtir. Ülkemiz, kuduz hastalığı
@@ -16,14 +16,14 @@ const RabiesTitrationTest = () => {
           düzeyi ölçülerek belgelendirilir. Kuduz aşısından sonra minimum 0,5
           IU/ml antikor titresi, koruyucu seviye olarak kabul edilir.
         </p>
-        <h2>Testi Kimler Yaptırmalıdır?</h2>
+        <h2 className={css.h2}>Testi Kimler Yaptırmalıdır?</h2>
         <p>
           Bu test, Türkiye’de yaşayan ve evcil hayvanıyla birlikte yurt dışına
           çıkmak isteyen kişilerin kedi ve köpekleri için zorunludur. Eğer yurt
           dışına çıkma gibi bir planınız yoksa, bu testi yaptırmanız zorunlu
           değildir.
         </p>
-        <h2>Test Nerede Yapılır?</h2>
+        <h2 className={css.h2}>Test Nerede Yapılır?</h2>
         <p>
           Kuduz titrasyon testinin diğer ülkelerde geçerli olabilmesi için,
           testi yapan laboratuvarın uluslararası akreditasyon sertifikasına
@@ -32,7 +32,7 @@ const RabiesTitrationTest = () => {
           Araştırma Enstitüsü Laboratuvarıdır. Titrasyon testi yalnızca burada
           yapılmaktadır.
         </p>
-        <h2>Test İçin Gerekli Belgeler Nelerdir?</h2>
+        <h2 className={css.h2}>Test İçin Gerekli Belgeler Nelerdir?</h2>
         <p>
           Testin yapılabilmesi için sevimli dostunuzun:
           <ul>
@@ -45,7 +45,7 @@ const RabiesTitrationTest = () => {
             kaydı tamamlanmalı, ardından kuduz aşısı uygulanmalıdır.
           </ul>
         </p>
-        <h2>Test Nasıl Yapılır?</h2>
+        <h2 className={css.h2}>Test Nasıl Yapılır?</h2>
         <p>
           Test, kan serumu örneği üzerinden yapılır. Sizin yapmanız gereken tek
           şey, kliniğinizden randevu alıp sevimli dostunuzdan yeterli miktarda
@@ -57,7 +57,7 @@ const RabiesTitrationTest = () => {
           sonucu kliniğinize ulaştırılır. Sonuçlar genellikle 3 ila 8 hafta
           arasında çıkmaktadır.
         </p>
-        <h2>Test Ücreti Nereye Ödenir?</h2>
+        <h2 className={css.h2}>Test Ücreti Nereye Ödenir?</h2>
         <p>
           Kuduz titrasyon testinin ücreti, diğer veteriner hizmetlerinde olduğu
           gibi, Veteriner Hekimler Odası tarafından belirlenmektedir. Ücretler
@@ -66,7 +66,7 @@ const RabiesTitrationTest = () => {
           sizin adınıza referans laboratuvar bedelini, kargo, ekipman ve işçilik
           gibi giderleri karşılar.
         </p>
-        <h2>Testin Geçerlilik Süresi Nedir?</h2>
+        <h2 className={css.h2}>Testin Geçerlilik Süresi Nedir?</h2>
         <p>
           Kuduz titrasyon testi sonucu başarılı geldiyse, test ömür boyu
           geçerlidir. Ancak bunun tek bir şartı vardır: Kuduz aşısının her yıl,

@@ -3,13 +3,13 @@
       color: #292d54;
       font-size: 24px;
 }
-h1 {
+.h1 {
       color: #ca5454;
 }
-h2 {
+.h2 {
       text-decoration: underline;
 }
-span {
+.span {
       font-weight: bold;
 }
 .link {

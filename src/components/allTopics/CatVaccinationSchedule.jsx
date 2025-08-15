@@ -7,13 +7,13 @@ const CatVaccinationSchedule = () => {
     <>
       <Navigation />
       <div className={css.container}>
-        <h1>Kedi Aşı Takvimi</h1>
+        <h1 className={css.h1}>Kedi Aşı Takvimi</h1>
         <p>
           Yavru kedilerin sağlıklı bir bağışıklık geliştirebilmesi için aşı
           takvimi dikkatle takip edilmelidir. Aşağıda kediler için ideal aşılama
           programı ve detaylı bilgiler yer almaktadır.
         </p>
-        <h2>Yeni Doğan Kedilerde Aşılamaya Başlama</h2>
+        <h2 className={css.h2}>Yeni Doğan Kedilerde Aşılamaya Başlama</h2>
         <p>
           Yeni doğan yavru kedilerin yaklaşık 45 gün boyunca anne sütü alması
           önerilir. Bu süre sonunda, eğer yavrunun kilosu uygunsa (minimum 800
@@ -56,7 +56,7 @@ const CatVaccinationSchedule = () => {
         </ol>
         <h4>Tarihli Örnek Aşı Takvimi (1 Ocak Doğumlu Yavru Kedi)</h4>
         <CatVaccineTable />
-        <h2>Yetişkin Kedilerde Aşılama</h2>
+        <h2 className={css.h2}>Yetişkin Kedilerde Aşılama</h2>
         <p>
           Kediler bir yaşından sonra aşılama artık rutin tarihlerde yapılır.
           Karma, lösemi ve kuduz aşıları yılda bir sefer yapılır. Son
