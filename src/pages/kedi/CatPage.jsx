@@ -6,7 +6,7 @@ const CatPage = () => {
   return (
     <>
       <Navigation />
-      <h1>Kedi Sayfası</h1>
+      <h1>Kedilerin Konu Başlıkları</h1>
       <CatPageContent />
       <Outlet />
     </>

@@ -1,15 +1,15 @@
+import { Link } from "react-router-dom";
+
 const CatPageContent = () => {
   return (
-    <div>
-      <h2>Kedi Sayfası İçeriği</h2>
-      <p>Bu sayfa kediler hakkında bilgi içermektedir.</p>
-      <ul>
-        <li>Kedilerin bakımı</li>
-        <li>Kedilerin beslenmesi</li>
-        <li>Kedilerin sağlığı</li>
-        <li>Kedilerle oyun oynama</li>
-      </ul>
-    </div>
+    <>
+      <div>
+      <Link to= "/kedi-asi-takvimi" >Kedi Aşı Takvimi</Link>
+        
+      </div>
+      <h2>Yeni konular çok yakında...</h2>
+    
+    </>
   );
 }
 export default CatPageContent;

@@ -7,7 +7,7 @@ const DogPage = () => {
   return (
     <>
       <Navigation />
-      <h1>Köpek Sayfası</h1>
+      <h1>Köpeklerin Konu Başlıkları</h1>
       <DogPageContent />
       <Outlet />
     </>
