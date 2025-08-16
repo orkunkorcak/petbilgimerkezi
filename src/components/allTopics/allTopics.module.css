@@ -27,3 +27,13 @@
       color: white;
       transition: 0.5s;
 }
+.pageLink {
+      display: inline-block;
+      color: #fff;
+      padding: 10px 20px;
+      border-Radius: 15px;
+      text-Decoration: none;
+      margin: 15px 10px;
+      gap: 10px;
+      background-color: #ca5454;
+}
