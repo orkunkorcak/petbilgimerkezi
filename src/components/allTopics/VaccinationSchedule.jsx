@@ -58,7 +58,7 @@ const VaccinationSchedule = () => {
           bağlantılardan kedi veya köpekler için aşı takvimine ulaşabilirsiniz.
         </h3>
       </div>
-      <div>
+      <div className={css.linkContainer}>
         <Link to= "/kedi-asi-takvimi" className={css.link}>Kedi Aşı Takvimi</Link>
         <Link to= "/kopek-asi-takvimi" className={css.link}>Köpek Aşı Takvimi</Link>
       </div>

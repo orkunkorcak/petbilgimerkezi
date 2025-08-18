@@ -1,22 +1,22 @@
 .popularTopic {
   color: #ca5454;
   font-family: "Comic Sans MS", sans-serif;
-  font-size: 36px;
+  font-size: 20px;
   font-weight: 700;
-  padding: 20px;
-  margin-top: 100px;
-  margin-bottom: 60px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-decoration: underline;
 }
 
 .card {
+  width: 300px;
   display: flex;
-  flex-direction: row;
-  padding: 20px;
+  flex-direction: column;
   gap: 20px;
 }
 .cardItems {
-  width: 320px;
+  width: 280px;
   border: solid 1px #292d54;
   box-shadow: 1px 1px 5px #292d54;
   border-radius: 10px;
@@ -45,4 +45,38 @@
   object-fit: cover;
   border-radius: 10px;
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .popularTopic {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .card {
+    width: 748px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .cardItems {
+    width: 320px;
+  }
+  
+}
+@media screen and (min-width: 1280px) {
+  .popularTopic {
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+  }
+  .card {
+    width: 1240px;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+  .cardItems {
+    width: 280px;
+  }
+  
 }

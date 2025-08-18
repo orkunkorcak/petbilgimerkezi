@@ -4,9 +4,10 @@
   padding: 10px 20px;
   text-align: center;
   background-color: #acd5de;
+  margin: 0 auto;
 }
 .logo {
-  width: 140px;
+  width: 80px;
   height: auto;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -16,6 +17,7 @@
   cursor: url('/images/imlecwhite.png') 0 0, auto;
 }
 .registerButton {
+  width: 85px;
   background-color: #ca5454;
   color: white;
   padding: 10px 20px;
@@ -23,7 +25,8 @@
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  height: 50px;
+  height: 100%;
+  font-size: 10px;
 }
 .link {
   text-decoration: none;
@@ -36,4 +39,27 @@
   color: #ca5454;
   font-weight: 400;
   font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+ .logo {
+    width: 100px;
+    height: auto; 
+ }
+  .registerButton {
+      width: 120px;
+      padding: 12px 24px;
+      font-size: 16px;
+  }
+  
+}
+@media screen and (min-width: 1280px) {
+  .logo {
+    width: 140px;
+  }
+  .registerButton {
+    width: 230px;
+    height: 50px;
+    padding: 14px 28px;
+    font-size: 20px;
+  }
 }

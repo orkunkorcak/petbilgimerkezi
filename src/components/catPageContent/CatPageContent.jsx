@@ -21,6 +21,7 @@ const RandomLinkButton = ({ text, href }) => {
     <Link
       to={href}
       style={{
+        display: "inline-block",
         backgroundColor: bgColor,
         color: "#fff",
         padding: "10px 20px",
@@ -28,6 +29,8 @@ const RandomLinkButton = ({ text, href }) => {
         textDecoration: "none",
         margin: "10px 10px",
         gap: "10px",
+        fontFamily: "Comic Sans MS, sans-serif",
+        fontSize: "12px",
       }}
     >
       {text}
