@@ -8,6 +8,7 @@
 }
 .heroContent {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
@@ -15,7 +16,7 @@
 .heroTitle {
   display: flex;
   font-family: "Comic Sans MS", sans-serif;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: bold;
   color: #292d54;
   text-align: center;
@@ -23,7 +24,44 @@
   padding-left: 10px;
 }
 .heroImage {
-  width: 700px;
+  width: 280px;
   height: auto;
-  padding-top: 160px;
+  
+}
+@media screen and (min-width: 768px) {
+  .heroSection {
+    height: 220px;
+  }
+  .heroContent {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .heroTitle {
+    font-size: 40px;
+  }
+  .heroImage {
+    width: 380px;
+    height: auto;
+    padding-top: 60px;
+  }
+  
+}
+@media screen and (min-width: 1280px) {
+  .heroSection {
+    height: 350px;
+  }
+  .heroContent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .heroTitle {
+    font-size: 48px;
+  }
+  .heroImage {
+    width: 700px;
+    height: auto;
+    padding-top: 80px;
+  }
 }
