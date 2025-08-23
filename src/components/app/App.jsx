@@ -1,8 +1,9 @@
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { lazy } from "react";
+import { lazy, useState } from "react";
 import NotFoundPage from "../../pages/notFoundPage/NotFoundPage";
 import ScrollToTop from "../../utils/ScrollToTop";
+import Loader from "../loader/Loader";
 
 const HomePage = lazy(() => import("../../pages/home/HomePage"));
 const Footer = lazy(() => import("../footer/Footer"));
@@ -28,9 +29,10 @@ const DogVaccinationSchedule = lazy(() =>
 );
 
 function App() {
+   
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
       <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
