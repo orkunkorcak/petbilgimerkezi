@@ -1,0 +1,30 @@
+.loader {
+  display: flex;
+    background-color: #2b2a2a5f;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;      
+  background-color: white;
+  border-radius: 20px;
+}
+
+.loaderImg {
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: contain;
+  display: block;
+}
+.h2 {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #ee7459;
+}

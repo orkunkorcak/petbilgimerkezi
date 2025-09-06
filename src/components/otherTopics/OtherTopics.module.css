@@ -1,0 +1,69 @@
+.title {
+  color: #ca5454;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px;
+  margin: 25px auto;
+  text-align: center;
+  text-decoration: underline;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+.image {
+  width: 280px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px #292d54;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image:hover {
+  transform: scale(1.06) translateY(-8px);
+  box-shadow: 4px 8px 24px #292d5499;
+  z-index: 2;
+  cursor: url('/images/imlecwhite.png') 0 0, auto;
+
+}
+@media screen and (min-width: 768px) {
+  
+  .title {
+    font-size: 30px;
+    padding: 30px;
+    margin: 35px auto;
+  }
+  
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .image {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .title {
+    font-size: 36px;
+    padding: 40px;
+    margin: 45px auto;
+  }
+  
+  .card {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  .image {
+    width: 450px;
+  }
+}
