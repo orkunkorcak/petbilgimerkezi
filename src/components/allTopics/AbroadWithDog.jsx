@@ -10,7 +10,7 @@ const AbroadWithDog = () => {
         <p>
           Köpek ile yurtdışına çıkmak, sıradan bir seyahatten daha fazla
           hazırlık ve resmi işlem gerektirir. Eğer seyahatiniz kısa süreliyse
-          köpeğinizi güvendiğiniz bir yakınıza emanet edebilir ya da güvenilir
+          köpeğinizi güvendiğiniz bir yakınınıza emanet edebilir ya da güvenilir
           bir pet pansiyonuna bırakabilirsiniz. Ancak uzun süreli bir yurtdışı
           planınız varsa, dostunuzu yanınızda götürmeniz gerekir. Bu durumda
           belirli belgeler ve prosedürleri tamamlamanız şarttır.
