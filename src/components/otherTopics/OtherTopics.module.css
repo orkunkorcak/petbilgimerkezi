@@ -13,6 +13,7 @@
   flex-direction: column;
   gap: 20px;
   justify-content: center;
+  margin: auto;
 }
 .image {
   width: 280px;
