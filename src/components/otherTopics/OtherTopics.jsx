@@ -10,14 +10,14 @@ const OtherTopics = () => {
           <Link to="/kedi">
             <img
               className={css.image}
-              src="../../../public/images/cat-category.png"
+              src="/images/cat-category.png"
               alt="kedi"
             />
           </Link>
           <Link to="/kopek">
             <img
               className={css.image}
-              src="../../../public/images/dog-category.png"
+              src="/images/dog-category.png"
               alt="köpek"
             />
           </Link>
