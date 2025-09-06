@@ -38,9 +38,12 @@ const DogVaccinationSchedule = () => {
         </ul>
         <h4>Uygulanabilecek Aşılar</h4>
         <ul>
-          <li>Primadog</li>
-          <li>Puppy DP</li>
-          <li>Karma Aşı (Da2PPiL)</li>
+          <li>Primodog (parvovirüs)</li>
+          <li>Puppy DP (distemper virüs ve parvovirüs)</li>
+          <li>
+            Karma Aşı (distemper virüs, parvovirüs, adenovirüs, parainfluenza
+            virus ve leptospira)
+          </li>
           <li>Corona</li>
           <li>Bronşin (Bordetella)</li>
           <li>Lyme</li>
@@ -56,7 +59,7 @@ const DogVaccinationSchedule = () => {
         <h4>Tarihsiz Örnek Aşı Programı</h4>
         <ol>
           <li>İç–dış parazit uygulaması</li>
-          <li>(1 hafta sonra) Primadog</li>
+          <li>(1 hafta sonra) Primodog</li>
           <li>(1 hafta sonra) Puppy DP</li>
           <li>(3 hafta sonra) Karma 1</li>
           <li>(3 hafta sonra) Karma 2</li>
@@ -78,16 +81,23 @@ const DogVaccinationSchedule = () => {
         <DogVaccineTable />
         <h2 className={css.h2}>Yetişkin Köpeklerde Aşılama</h2>
         <p>
-          Köppekler bir yaşından sonra aşılama artık rutin tarihlerde yapılır.
-          Karma, corona,bronşin, lyme ve kuduz aşıları yılda bir sefer yapılır. Son
-          yaptırdığınız tarihe göre her sene aynı tarihte tekrarı yapılır.
-          Yukarıdaki tabloya göre her 12 Nisan'da karma, her 24 Mayıs'ta corona, 14 Haziran'da kuduz, 26 Temmuz'da bronşin ve 6 Eylül'de lyme aşıları tekrarı yapılacak.
+          Köpekler bir yaşından sonra aşılama artık rutin tarihlerde yapılır.
+          Karma, corona,bronşin, lyme ve kuduz aşıları yılda bir sefer yapılır.
+          Son yaptırdığınız tarihe göre her sene aynı tarihte tekrarı yapılır.
+          Yukarıdaki tabloya göre her 12 Nisan'da karma, her 24 Mayıs'ta corona,
+          14 Haziran'da kuduz, 26 Temmuz'da bronşin ve 6 Eylül'de lyme aşıları
+          tekrarı yapılacak.
         </p>
         <h2 className={css.h2}>Parazit Uygulamaları</h2>
-        <p>Köpekler için çeşitli parazit uygulama methotları bulunmaktadır.
-          İç ve dış parazit için ayrı ayrı tablet veya damla uygulayabilir ya da ikisinin birlikte olduğu tabletler 
-          kullanabilirsiniz. Parazit uygulamaları genellikle iki ayda bir tekrarlanması önerilir. Ancak bazı preparatlar üç aylık seçeneklerde de bulunabilir.
-          Parazit uygulamaları, köpeğinizin yaşına, kilosuna ve sağlık durumuna göre değişiklik gösterebilir. Bu nedenle, en uygun parazit uygulama programını belirlemek için veteriner hekiminizle görüşmeniz önemlidir.
+        <p>
+          Köpekler için çeşitli parazit uygulama methotları bulunmaktadır. İç ve
+          dış parazit için ayrı ayrı tablet veya damla uygulayabilir ya da
+          ikisinin birlikte olduğu tabletler kullanabilirsiniz. Parazit
+          uygulamaları genellikle iki ayda bir tekrarlanması önerilir. Ancak
+          bazı preparatlar üç aylık seçeneklerde de bulunabilir. Parazit
+          uygulamaları, köpeğinizin yaşına, kilosuna ve sağlık durumuna göre
+          değişiklik gösterebilir. Bu nedenle, en uygun parazit uygulama
+          programını belirlemek için veteriner hekiminizle görüşmeniz önemlidir.
         </p>
       </div>
     </>

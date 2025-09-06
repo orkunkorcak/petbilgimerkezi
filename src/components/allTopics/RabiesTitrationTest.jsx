@@ -54,7 +54,7 @@ const RabiesTitrationTest = () => {
           <br />
           Alınan kan örneği santrifüj ile seruma dönüştürülür, serum soğuk
           zincir kurallarına uygun şekilde ilgili laboratuvara gönderilir. Test
-          sonucu kliniğinize ulaştırılır. Sonuçlar genellikle 3 ila 8 hafta
+          sonucu kliniğinize ulaştırılır. Sonuçlar genellikle 3 ile 8 hafta
           arasında çıkmaktadır.
         </p>
         <h2 className={css.h2}>Test Ücreti Nereye Ödenir?</h2>

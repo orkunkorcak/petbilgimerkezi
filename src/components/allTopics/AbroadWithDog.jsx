@@ -61,7 +61,7 @@ const AbroadWithDog = () => {
             <p>
               Test sonucunuz olumlu geldikten sonra uçuş tarihini
               kesinleştirebilir ve biletinizi alabilirsiniz. Genellikle kan
-              alımından sonra 90 gün karantian uygulaması istendiği için
+              alımından sonra 90 gün karantina uygulaması istendiği için
               biletinizi titrasyon testi için kan alındıktan en az 90 gün
               sonrasına rezervasyon yaptırın.
             </p>

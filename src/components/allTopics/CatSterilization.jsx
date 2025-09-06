@@ -36,8 +36,8 @@ const CatSterilization = () => {
           yerlerde yaptığı yüksek tonda miyavlama ve agresyon biter
           <br />• Erkek kedilerde bölge işaretleme (idrar püskürtme), kavgacılık
           azalır.
-          <br />• Yüksek katlı apartmandan aşağıya çiftleşmek için aşağıya
-          atlama ihtimali kalkar.
+          <br />• Yüksek katlı apartmandan çiftleşmek için aşağıya
+          atlama, evden kaçma ihtimali kalkar.
           <br />• Daha sakin ve uyumlu bir karakter gelişir.
         </p>
         <h4>Toplumsal Açıdan:</h4>

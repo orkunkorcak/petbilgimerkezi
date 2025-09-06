@@ -3,7 +3,7 @@ const DogVaccinationSchedule = () => {
     const schedule = [
         { date: "1 Ocak", application: "Doğum" },
         { date: "15 Şubat", application: "İç–dış parazit" },
-        { date: "22 Şubat", application: "Primadog" },
+        { date: "22 Şubat", application: "Primodog" },
         { date: "1 Mart", application: "PuppyDp" },
         { date: "22 Mart", application: "Karma 1" },
         { date: "12 Nisan", application: "Karma 2" },
