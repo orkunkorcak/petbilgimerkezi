@@ -6,17 +6,14 @@ const CatPageContent = () => {
     <>
       <RandomColorButton to="/kedi-asi-takvimi" text="Kedi Aşı Takvimi" />
       <RandomColorButton
-        to="/kedi"
+        to="/kediyle-veteriner-ziyareti"
         text="Kedimle Veteriner Ziyaretine Hazırlanmak"
       />
       <RandomColorButton
-        to="/kedi"
-        text="Yurtdışına Çıkış"
+        to="/kediyle-yurtdisina-cikmak"
+        text="Kedimle Yurtdışına Çıkış"
       />
-      <RandomColorButton
-        to="/kedi"
-        text="Kedi Kısırlaştırmak"
-      />
+      <RandomColorButton to="/kedi-kisirlastirmak" text="Kedi Kısırlaştırmak" />
 
       <h2 className={css.h2}>Yeni konular çok yakında...</h2>
     </>

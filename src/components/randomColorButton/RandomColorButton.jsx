@@ -29,7 +29,7 @@ const RandomColorButton = ({ text, to }) => {
         margin: "10px 10px",
         gap: "10px",
         fontFamily: "Comic Sans MS, sans-serif",
-        fontSize: "12px",
+        fontSize: "14px",
       }}
     >
       {text}

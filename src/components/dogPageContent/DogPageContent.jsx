@@ -7,11 +7,17 @@ const DogPageContent = () => {
     <>
       <RandomColorButton to="/kopek-asi-takvimi" text="Köpek Aşı Takvimi" />
       <RandomColorButton
-        to="/kopek"
+        to="/kopekle-veteriner-ziyareti"
         text="Köpeğimle Veteriner Ziyaretine Hazırlanmak"
       />
-      <RandomColorButton to="/kopek" text="Yurtdışına Çıkış" />
-      <RandomColorButton to="/kopek" text="Köpek Kısırlaştırmak" />
+      <RandomColorButton
+        to="/kopekle-yurtdisina-cikmak"
+        text="Köpeğimle Yurtdışına Çıkış"
+      />
+      <RandomColorButton
+        to="/kopek-kisirlastirmak"
+        text="Köpek Kısırlaştırmak"
+      />
 
       <h2 className={css.h2}>Yeni konular çok yakında...</h2>
     </>

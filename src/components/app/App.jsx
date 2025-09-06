@@ -20,12 +20,30 @@ const TitrasyonTesti = lazy(() =>
   import("../../pages/titrasyonTesti/TitrasyonTesti")
 );
 const CatPage = lazy(() => import("../../pages/kedi/CatPage"));
-const DogPage = lazy(() => import("../../pages/köpek/DogPage"));
 const CatVaccinationSchedule = lazy(() =>
   import("../allTopics/CatVaccinationSchedule")
 );
+const VisitWithCat = lazy(() =>
+  import("../allTopics/VisitWithCat")
+);
+const AbroadWithCat = lazy(() =>
+  import("../allTopics/AbroadWithCat")
+);
+const CatSterilization = lazy(() =>
+  import("../allTopics/CatSterilization")
+);
+const DogPage = lazy(() => import("../../pages/köpek/DogPage"));
 const DogVaccinationSchedule = lazy(() =>
   import("../allTopics/DogVaccinationSchedule")
+);
+const VisitWithDog = lazy(() =>
+  import("../allTopics/VisitWithDog")
+);
+const AbroadWithDog = lazy(() =>
+  import("../allTopics/AbroadWithDog")
+);
+const DogSterilization = lazy(() =>
+  import("../allTopics/DogSterilization")
 );
 
 function App() {
@@ -48,11 +66,17 @@ function App() {
             path="/kedi-asi-takvimi"
             element={<CatVaccinationSchedule />}
           />
+          <Route path="/kediyle-veteriner-ziyareti" element={<VisitWithCat />} />
+          <Route path="/kediyle-yurtdisina-cikmak" element={<AbroadWithCat />} />
+          <Route path="/kedi-kisirlastirmak" element={<CatSterilization />} />
           <Route path="/kopek" element={<DogPage />}></Route>
           <Route
             path="/kopek-asi-takvimi"
             element={<DogVaccinationSchedule />}
           />
+          <Route path="/kopekle-veteriner-ziyareti" element={<VisitWithDog />} />
+          <Route path="/kopekle-yurtdisina-cikmak" element={<AbroadWithDog />} />
+          <Route path="/kopek-kisirlastirmak" element={<DogSterilization />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
