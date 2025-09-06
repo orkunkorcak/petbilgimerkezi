@@ -47,11 +47,16 @@ const DogSterilization = lazy(() =>
 );
 
 function App() {
-   
+  // BUG: isLoading hep true, uygulama sürekli loader'da kalır
+  // const [isLoading] = useState(true);
+
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <>
       <Suspense fallback={<Loader />}>
-      <ScrollToTop />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/ucakla-seyehat" element={<UcaklaSeyehat />} />
@@ -66,16 +71,28 @@ function App() {
             path="/kedi-asi-takvimi"
             element={<CatVaccinationSchedule />}
           />
-          <Route path="/kediyle-veteriner-ziyareti" element={<VisitWithCat />} />
-          <Route path="/kediyle-yurtdisina-cikmak" element={<AbroadWithCat />} />
+          <Route
+            path="/kediyle-veteriner-ziyareti"
+            element={<VisitWithCat />}
+          />
+          <Route
+            path="/kediyle-yurtdisina-cikmak"
+            element={<AbroadWithCat />}
+          />
           <Route path="/kedi-kisirlastirmak" element={<CatSterilization />} />
           <Route path="/kopek" element={<DogPage />}></Route>
           <Route
             path="/kopek-asi-takvimi"
             element={<DogVaccinationSchedule />}
           />
-          <Route path="/kopekle-veteriner-ziyareti" element={<VisitWithDog />} />
-          <Route path="/kopekle-yurtdisina-cikmak" element={<AbroadWithDog />} />
+          <Route
+            path="/kopekle-veteriner-ziyareti"
+            element={<VisitWithDog />}
+          />
+          <Route
+            path="/kopekle-yurtdisina-cikmak"
+            element={<AbroadWithDog />}
+          />
           <Route path="/kopek-kisirlastirmak" element={<DogSterilization />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
