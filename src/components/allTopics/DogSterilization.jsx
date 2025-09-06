@@ -47,7 +47,7 @@ const DogSterilization = () => {
       <h2 className={css.h2}>Kısırlaştırma İçin En Uygun Zaman</h2>
       <p>
         • Genel olarak 6-12 ay arası en uygun dönem kabul edilir.
-        <br />• Büyük ırk köpeklerde bazen biraz daha geç yapılması
+        <br />• Büyük ırk köpeklerde bazen, biraz daha geç yapılması
         önerilebilir.
         <br />• En doğru zaman için mutlaka veteriner hekime danışılmalıdır.
       </p>
