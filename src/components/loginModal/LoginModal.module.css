@@ -11,19 +11,79 @@
     right: 0;
 }
 .modalContent {
-    width: 400px;
+    width: 320px;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
 }
-.logo {
+/* .logo {
     width: 100px;
     height: auto;
     margin-bottom: 20px;
-}
+} */
 .title {
     font-size: 20px;
     color: #ca5454;
     margin-bottom: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.field label {
+    margin-bottom: 1px;
+    color: #292d54;
+}
+.input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #292d54;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid #292d54;
+}
+.error {
+    color: #ca5454;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.buttonLgn {
+    background-color: #ca5454;
+    color: white;
+    padding: 20px;
+    border: 2px solid #ca5454;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buttonLgn:hover {
+    border: 2px groove #292d54;
+}
+.buttonRgs {
+    background-color: #ca5454;
+    color: white;
+    padding: 20px;
+    border: 2px solid #ca5454;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.buttonRgs:hover {
+    border: 2px groove #292d54;
 }
