@@ -4,6 +4,7 @@ import { lazy, useState } from "react";
 import NotFoundPage from "../../pages/notFoundPage/NotFoundPage";
 import ScrollToTop from "../../utils/ScrollToTop";
 import Loader from "../loader/Loader";
+import { Toaster } from "react-hot-toast";
 
 const HomePage = lazy(() => import("../../pages/home/HomePage"));
 const Footer = lazy(() => import("../footer/Footer"));
@@ -98,6 +99,7 @@ function App() {
         </Routes>
       </Suspense>
       <Footer />
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 }

@@ -29,7 +29,7 @@ export const registerUser = createAsyncThunk(
         password,
       });
       console.log("Register response:", response.data);
-      return response.data;
+      return response.data.data;
     } catch (error) {
       const message = error.response?.data?.message || error.message;
       return thunkAPI.rejectWithValue(message);
