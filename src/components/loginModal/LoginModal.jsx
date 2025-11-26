@@ -2,33 +2,29 @@ import css from "./LoginModal.module.css";
 import { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { loginUser, registerUser } from "../../redux/auth/operations";
+import {
+  loginUser,
+  registerUser,
+  refreshUser,
+} from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
-
+import { Link } from "react-router-dom";
 
 const LoginModal = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
-  const [mode, setMode] = useState("login"); // "login" veya "register"
+  const [mode, setMode] = useState("login");
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
+      if (event.key === "Escape") onClose();
     };
-    if (isOpen) {
-      document.addEventListener("keydown", handleKeyDown);
-    }
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
+    if (isOpen) document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
   const handleOverlayClick = (event) => {
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
+    if (event.target === event.currentTarget) onClose();
   };
 
   if (!isOpen) return null;
@@ -41,14 +37,21 @@ const LoginModal = ({ isOpen, onClose }) => {
       .required("*Gerekli"),
   });
 
+  // Artık burada response.user ve response.token var
+  // if (response?.user && response?.token) {
+  //   localStorage.setItem("user", JSON.stringify(response.user));
+  //   localStorage.setItem("token", response.token);
+  // }
   const handleLogin = async (values, { setSubmitting }) => {
     try {
-      await dispatch(loginUser(values));
-      toast.success("Giriş başarılı!");
-      console.log("login başarıyla tamamlandı");
+      const response = await dispatch(loginUser(values)).unwrap();
+      console.log("Login response in component:", response); // debug
+
+      // artık redux state güncellendi; localStorage opsiyonel
+      toast.success(`Hoş geldiniz, ${response.user?.name || "kullanıcı"}!`);
       onClose();
     } catch (error) {
-      console.error("Login error:", error);
+      console.error("Login error (component):", error);
       toast.error("Giriş başarısız. Lütfen tekrar deneyin.");
     } finally {
       setSubmitting(false);
@@ -67,10 +70,16 @@ const LoginModal = ({ isOpen, onClose }) => {
 
   const handleRegister = async (values, { setSubmitting }) => {
     try {
-      // doğrudan veritabanının istediği alanlarla gönderiyoruz
-      await dispatch(registerUser(values));
+      const response = await dispatch(registerUser(values)).unwrap();
+
+      // response içinde kullanıcı ve token varsa kaydet
+      if (response?.user && response?.token) {
+        localStorage.setItem("user", JSON.stringify(response.user));
+        localStorage.setItem("token", response.token);
+      }
+
       toast.success("Kayıt başarılı! Giriş yapabilirsiniz.");
-      setMode("login"); // kayıt sonrası login formuna dön
+      setMode("login");
     } catch (error) {
       console.error("Register error:", error);
       toast.error("Kayıt başarısız. Lütfen tekrar deneyin.");
@@ -78,7 +87,6 @@ const LoginModal = ({ isOpen, onClose }) => {
       setSubmitting(false);
     }
   };
-
 
   return (
     <div className={css.modal} onClick={handleOverlayClick}>
@@ -121,7 +129,7 @@ const LoginModal = ({ isOpen, onClose }) => {
                       disabled={isSubmitting}
                       className={css.buttonLgn}
                     >
-                      {isSubmitting ? "Hoşgeldiniz..." : "Giriş yap"}
+                      {isSubmitting ? "Hoşgeldiniz..." : "Giriş Yap"}
                     </button>
                     <button
                       type="button"
@@ -131,6 +139,11 @@ const LoginModal = ({ isOpen, onClose }) => {
                       Kayıt Ol
                     </button>
                   </div>
+                  <div>
+                    <Link to="/sifremi-unuttum" className={css.buttonFgt} onClick={onClose}>
+                      Şifremi Unuttum
+                    </Link>
+                  </div>
                 </Form>
               )}
             </Formik>
@@ -139,38 +152,30 @@ const LoginModal = ({ isOpen, onClose }) => {
           <>
             <h2 className={css.title}>Kayıt Ol</h2>
             <Formik
-              initialValues={{
-                name: "",
-                surname: "",
-                email: "",
-                password: "",
-              }}
+              initialValues={{ name: "", surname: "", email: "", password: "" }}
               validationSchema={registerSchema}
               onSubmit={handleRegister}
             >
               {({ isSubmitting }) => (
                 <Form className={css.form}>
-                  
-                    <div className={css.field}>
-                      <label htmlFor="name">Ad</label>
-                      <Field type="text" name="name" className={css.input} />
-                      <ErrorMessage
-                        name="name"
-                        component="div"
-                        className={css.error}
-                      />
-                    </div>
-                    <div className={css.field}>
-                      <label htmlFor="surname">Soyad</label>
-                      <Field type="text" name="surname" className={css.input} />
-                      <ErrorMessage
-                        name="surname"
-                        component="div"
-                        className={css.error}
-                      />
-                    </div>
-                  
-
+                  <div className={css.field}>
+                    <label htmlFor="name">Ad</label>
+                    <Field type="text" name="name" className={css.input} />
+                    <ErrorMessage
+                      name="name"
+                      component="div"
+                      className={css.error}
+                    />
+                  </div>
+                  <div className={css.field}>
+                    <label htmlFor="surname">Soyad</label>
+                    <Field type="text" name="surname" className={css.input} />
+                    <ErrorMessage
+                      name="surname"
+                      component="div"
+                      className={css.error}
+                    />
+                  </div>
                   <div className={css.field}>
                     <label htmlFor="email">E-mail</label>
                     <Field type="email" name="email" className={css.input} />

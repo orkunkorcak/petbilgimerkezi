@@ -2,16 +2,36 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.withCredentials = true; // cookie'leri otomatik gönder
+
+// add response interceptor to handle 401 centrally
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.warn(
+      "Axios error - url:",
+      error.config?.url,
+      "method:",
+      error.config?.method
+    );
+    console.warn("Request headers:", error.config?.headers);
+    console.warn(
+      "Response status:",
+      error.response?.status,
+      "body:",
+      error.response?.data
+    );
+    // 401 durumunda header temizle (loop engellemek için)
+    if (error.response?.status === 401) {
+      delete axios.defaults.headers.common.Authorization;
+    }
+    return Promise.reject(error);
+  }
+);
 
 export const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
-
-export const getAuthConfig = (token) => ({
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-});
 
 export const clearAuthHeader = () => {
   delete axios.defaults.headers.common.Authorization;
@@ -45,20 +65,21 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post(
         "/auth/login",
         { email, password },
-        { withCredentials: true } // backend cookie setliyorsa gerekli
+        { withCredentials: true }
       );
-      const token = response.data.accessToken;
 
-      if (!token) {
-        return thunkAPI.rejectWithValue("Token not found in response");
-      }
+      const { user, accessToken } = response.data.data;
 
-      setAuthHeader(token);
-      console.log("Login response:", response.data);
-      return response.data;
-      
+      if (!accessToken) return thunkAPI.rejectWithValue("Token not found");
+
+      setAuthHeader(accessToken);
+
+      // LocalStorage'a da kullanıcıyı kaydet
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("token", accessToken);
+
+      return { user, token: accessToken };
     } catch (error) {
-      console.error("Login error:", error);
       const message = error.response?.data?.message || error.message;
       return thunkAPI.rejectWithValue(message);
     }
@@ -79,41 +100,37 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
-// REFRESH (hybrid - öncelikle Authorization header ile POST dener, yoksa cookie ile GET'e düşer)
+// REFRESH
 export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
     try {
-      const state = thunkAPI.getState();
-      const currentToken = state?.auth?.token; // mevcut access veya refresh token (backend beklentisine göre)
+      // POST request, cookie otomatik gönderilecek (withCredentials)
+      const response = await axios.post(
+        "/auth/refresh",
+        {},
+        { withCredentials: true }
+      );
 
-      let response;
+      const accessToken = response.data?.data?.accessToken;
+      if (!accessToken) throw new Error("Access token not found from refresh");
 
-      if (currentToken) {
-        // Eğer backend header ile bekliyorsa: POST /auth/refresh Authorization: Bearer <token>
-        response = await axios.post(
-          "/auth/refresh",
-          {},
-          getAuthConfig(currentToken)
-        );
-      } else {
-        // Eğer backend refresh token'ı httpOnly cookie'ye koyuyorsa: cookie gönderilsin
-        response = await axios.get("/auth/refresh", { withCredentials: true });
-      }
-
-      const { accessToken, user } = response.data;
-
-      if (!accessToken) {
-        throw new Error("Access token not found in response");
-      }
-
-      // Yeni access token'ı global header'a set et
+      // access token'ı header'a set et
       setAuthHeader(accessToken);
 
-      return { accessToken, user };
+      // Kullanıcı bilgisini localStorage'dan al
+      const storedUser = localStorage.getItem("user");
+      const user = storedUser ? JSON.parse(storedUser) : null;
+
+      return { user, token: accessToken };
     } catch (error) {
-      const message = error.response?.data?.message || error.message;
-      return thunkAPI.rejectWithValue(message);
+      console.error("Refresh error:", error.response?.data || error.message);
+
+      // 401 veya başka bir hata durumunda kullanıcı logout
+      // thunkAPI.dispatch(logoutUser());
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || error.message
+      );
     }
   }
 );

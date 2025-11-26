@@ -22,16 +22,25 @@ export const authSlice = createSlice({
     isRefreshing: false,
     error: null,
   },
+  reducers: {
+    // opsiyonel logout action
+    localLogout(state) {
+      state.user = { name: null, surname: null, email: null };
+      state.token = null;
+      state.isLoggedIn = false;
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+    },
+  },
   extraReducers: (builder) => {
     builder
-      // REGISTER
       .addCase(registerUser.pending, handlePending)
       .addCase(registerUser.fulfilled, (state, action) => {
         const { user } = action.payload;
         state.user = {
-          name: userData.name || null,
-          surname: userData.surname || null,
-          email: userData.email || null,
+          name: user.name || null,
+          surname: user.surname || null,
+          email: user.email || null,
         };
         state.token = null;
         state.isLoggedIn = false;
@@ -39,22 +48,21 @@ export const authSlice = createSlice({
       })
       .addCase(registerUser.rejected, handleRejected)
 
-      // LOGIN
       .addCase(loginUser.pending, handlePending)
       .addCase(loginUser.fulfilled, (state, action) => {
-        const { user, accessToken } = action.payload;
+        const { user, token } = action.payload;
         state.user = {
-          name: user.name,
-          surname: user.surname,
-          email: user.email,
+          name: user.name || null,
+          surname: user.surname || null,
+          email: user.email || null,
         };
-        state.token = accessToken;
-        state.isLoggedIn = !!accessToken;
+        state.token = token || null;
+        state.isLoggedIn = !!token;
         state.isLoading = false;
+        state.error = null;
       })
       .addCase(loginUser.rejected, handleRejected)
 
-      // LOGOUT
       .addCase(logoutUser.pending, handlePending)
       .addCase(logoutUser.fulfilled, (state) => {
         state.user = { name: null, surname: null, email: null };
@@ -65,21 +73,31 @@ export const authSlice = createSlice({
       .addCase(logoutUser.rejected, handleRejected)
 
       // REFRESH
-      .addCase(refreshUser.pending, (state) => {
-        state.isRefreshing = true;
-        state.error = null;
-      })
-      .addCase(refreshUser.fulfilled, (state, action) => {
-        state.isRefreshing = false;
-        state.user = action.payload.user;
-        state.token = action.payload.accessToken;
-        state.isLoggedIn = true;
-      })
-      .addCase(refreshUser.rejected, (state, action) => {
-        state.isRefreshing = false;
-        state.error = action.payload || "Token yenileme başarısız.";
-      });
- 
+.addCase(refreshUser.pending, (state) => {
+  state.isRefreshing = true;
+  state.error = null;
+})
+.addCase(refreshUser.fulfilled, (state, action) => {
+  const { user, token } = action.payload;
+  state.user = {
+    name: user?.name || null,
+    surname: user?.surname || null,
+    email: user?.email || null,
+  };
+  state.token = token || null;
+  state.isLoggedIn = !!token;
+  state.isRefreshing = false;
+  state.error = null;
+})
+.addCase(refreshUser.rejected, (state, action) => {
+  state.user = { name: null, surname: null, email: null };
+  state.token = null;
+  state.isLoggedIn = false;
+  state.isRefreshing = false;
+  state.error = action.payload;
+});
   },
 });
+
+export const { localLogout } = authSlice.actions;
 export default authSlice.reducer;

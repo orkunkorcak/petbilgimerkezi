@@ -87,3 +87,15 @@
 .buttonRgs:hover {
     border: 2px groove #292d54;
 }
+.buttonFgt {
+    background-color: #ca5454;
+    color: white;
+    padding: 5px;
+    border: 2px solid #ca5454;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.buttonFgt:hover {
+    border: 2px groove #292d54;
+}

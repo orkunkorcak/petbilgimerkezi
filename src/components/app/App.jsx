@@ -5,8 +5,20 @@ import NotFoundPage from "../../pages/notFoundPage/NotFoundPage";
 import ScrollToTop from "../../utils/ScrollToTop";
 import Loader from "../loader/Loader";
 import { Toaster } from "react-hot-toast";
+import { refreshUser } from "../../redux/auth/operations";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { selectIsRefreshing } from "../../redux/auth/selectors";
+import PrivateRoute from "../../routes/PrivateRoute";
+
 
 const HomePage = lazy(() => import("../../pages/home/HomePage"));
+const ProfilePage = lazy(() => import("../../pages/profil/ProfilPage"));
+const MyProfile = lazy(() => import("../../components/profile/MyProfile"));
+const PetProfile = lazy(() => import("../profile/PetProfile"));
+const ForgotPassword = lazy(() =>
+  import("../../pages/sifremiUnuttum/ForgotPassword")
+); 
 const Footer = lazy(() => import("../footer/Footer"));
 const UcaklaSeyehat = lazy(() =>
   import("../../pages/ucaklaSeyehat/UcaklaSeyehat")
@@ -24,42 +36,51 @@ const CatPage = lazy(() => import("../../pages/kedi/CatPage"));
 const CatVaccinationSchedule = lazy(() =>
   import("../allTopics/CatVaccinationSchedule")
 );
-const VisitWithCat = lazy(() =>
-  import("../allTopics/VisitWithCat")
-);
-const AbroadWithCat = lazy(() =>
-  import("../allTopics/AbroadWithCat")
-);
-const CatSterilization = lazy(() =>
-  import("../allTopics/CatSterilization")
-);
+const VisitWithCat = lazy(() => import("../allTopics/VisitWithCat"));
+const AbroadWithCat = lazy(() => import("../allTopics/AbroadWithCat"));
+const CatSterilization = lazy(() => import("../allTopics/CatSterilization"));
 const DogPage = lazy(() => import("../../pages/köpek/DogPage"));
 const DogVaccinationSchedule = lazy(() =>
   import("../allTopics/DogVaccinationSchedule")
 );
-const VisitWithDog = lazy(() =>
-  import("../allTopics/VisitWithDog")
-);
-const AbroadWithDog = lazy(() =>
-  import("../allTopics/AbroadWithDog")
-);
-const DogSterilization = lazy(() =>
-  import("../allTopics/DogSterilization")
-);
+const VisitWithDog = lazy(() => import("../allTopics/VisitWithDog"));
+const AbroadWithDog = lazy(() => import("../allTopics/AbroadWithDog"));
+const DogSterilization = lazy(() => import("../allTopics/DogSterilization"));
 
 function App() {
-  // BUG: isLoading hep true, uygulama sürekli loader'da kalır
-  // const [isLoading] = useState(true);
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+
+    // Cookie backend'de ama accessToken yoksa (örneğin sayfa yenilenmişse)
+    // sadece user varsa refreshUser() çağrısı yap
+    if (storedUser) {
+      dispatch(refreshUser());
+    }
+  }, [dispatch]);
+
+  if (isRefreshing) return <Loader />;
   return (
     <>
       <Suspense fallback={<Loader />}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <ProfilePage />
+              </PrivateRoute>
+            }
+          >
+            <Route path="myProfile" element={<MyProfile />} />
+            <Route path="petProfile" element={<PetProfile />} />
+          </Route>
+          <Route path="/sifremi-unuttum" element={<ForgotPassword />} />
           <Route path="/ucakla-seyehat" element={<UcaklaSeyehat />} />
           <Route
             path="/mikrocip-ve-pasaport"
