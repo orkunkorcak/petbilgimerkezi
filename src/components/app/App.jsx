@@ -18,6 +18,9 @@ const MyProfile = lazy(() => import("../../components/profile/MyProfile"));
 const PetProfile = lazy(() => import("../profile/PetProfile"));
 const ForgotPassword = lazy(() =>
   import("../../pages/sifremiUnuttum/ForgotPassword")
+);
+const ResetPassword = lazy(() =>
+  import("../../pages/sifremiUnuttum/ResetPassword")
 ); 
 const Footer = lazy(() => import("../footer/Footer"));
 const UcaklaSeyehat = lazy(() =>
@@ -81,6 +84,7 @@ function App() {
             <Route path="petProfile" element={<PetProfile />} />
           </Route>
           <Route path="/sifremi-unuttum" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/ucakla-seyehat" element={<UcaklaSeyehat />} />
           <Route
             path="/mikrocip-ve-pasaport"

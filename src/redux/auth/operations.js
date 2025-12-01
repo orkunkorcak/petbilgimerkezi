@@ -134,3 +134,38 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+//password reset mail
+export const sendPasswordResetEmail = createAsyncThunk(
+  "/auth/send-reset-email",
+  async (email, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        "/auth/send-reset-email",
+        { email },
+        { withCredentials: true }
+      );
+      return response.data.data;
+    } catch (error) {
+      const message = error.response?.data?.message || error.message;
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+//password reset
+export const resetPassword = createAsyncThunk(
+  "/auth/reset-password",
+  async ({ token, newPassword }, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        "/auth/reset-password",
+        { token, password: newPassword },
+        { withCredentials: true }
+      );
+      return response.data.data;
+    } catch (error) {
+      const message = error.response?.data?.message || error.message;
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
