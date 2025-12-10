@@ -45,7 +45,7 @@ const LoginModal = ({ isOpen, onClose }) => {
   const handleLogin = async (values, { setSubmitting }) => {
     try {
       const response = await dispatch(loginUser(values)).unwrap();
-      console.log("Login response in component:", response); // debug
+      
 
       // artık redux state güncellendi; localStorage opsiyonel
       toast.success(`Hoş geldiniz, ${response.user?.name || "kullanıcı"}!`);

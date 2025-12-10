@@ -53,7 +53,7 @@ function Navigation() {
 
           {auth.isLoggedIn && isDropdownOpen && (
             <div className={css.dropdownMenu}>
-              <Link to="/profile" className={css.dropdownItem}>
+              <Link to="/profile/${user._id}" className={css.dropdownItem}>
                 Profilim
               </Link>
               <button onClick={handleLogout} className={css.dropdownItem}>

@@ -6,6 +6,7 @@ import {
   refreshUser,
   sendPasswordResetEmail,
   resetPassword,
+  updateUser
 } from "./operations";
 
 const handlePending = (state) => {
@@ -72,6 +73,7 @@ export const authSlice = createSlice({
         const { user, token } = action.payload;
 
         state.user = {
+          _id: user._id,
           name: user?.name || null,
           surname: user?.surname || null,
           email: user?.email || null,
@@ -103,6 +105,7 @@ export const authSlice = createSlice({
         const { user, token } = action.payload;
 
         state.user = {
+          _id: user._id,
           name: user?.name || null,
           surname: user?.surname || null,
           email: user?.email || null,
@@ -157,6 +160,26 @@ export const authSlice = createSlice({
         state.passwordReset.success = false;
         state.passwordReset.message =
           action.payload ?? action.error?.message ?? "Password reset failed";
+      })
+      // UPDATE USER
+      .addCase(updateUser.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        const updatedUser = action.payload;
+
+        state.user = {
+          ...state.user,
+          ...updatedUser, // ✅ sadece gelen alanları overwrite eder
+        };
+
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(updateUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });

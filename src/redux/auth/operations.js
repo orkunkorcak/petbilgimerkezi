@@ -48,7 +48,7 @@ export const registerUser = createAsyncThunk(
         email,
         password,
       });
-      console.log("Register response:", response.data);
+      
       return response.data.data;
     } catch (error) {
       const message = error.response?.data?.message || error.message;
@@ -169,3 +169,31 @@ export const resetPassword = createAsyncThunk(
     }
   }
 );
+// user update
+export const updateUser = createAsyncThunk(
+  "auth/update-user",
+  async ({ id, data }, thunkAPI) => {
+    try {
+      const response = await axios.patch(
+        `/auth/update-user/${id}`,
+        data,
+        { withCredentials: true }
+      );
+
+      const updatedUser = response.data.data;
+
+      const storedUser = localStorage.getItem("user");
+      const user = storedUser ? JSON.parse(storedUser) : {};
+
+      const newUser = { ...user, ...updatedUser };
+      localStorage.setItem("user", JSON.stringify(newUser));
+
+      return updatedUser;
+    } catch (error) {
+      const message =
+        error.response?.data?.message || "Update failed";
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+

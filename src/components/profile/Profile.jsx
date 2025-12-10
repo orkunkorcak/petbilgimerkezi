@@ -1,7 +1,8 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import css from "./profiles.module.css";
 
 const Profile = () => {
+const { userId } = useParams();
   return (
     <>
       <div
