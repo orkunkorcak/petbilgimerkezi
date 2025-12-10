@@ -1,0 +1,78 @@
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: center;
+  font-family: "Comic Sans MS", sans-serif;
+}
+.link {
+  color: #ca5454;
+  text-decoration: none;
+  font-family: "Comic Sans MS", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  border: 1px solid #ca5454;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+.link:hover {
+  background-color: #ca5454;
+  color: white;
+  transition: 0.5s;
+}
+.formContainer {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #292d54;
+}
+.label {
+  display: block;
+  margin-bottom: 6px;
+  color: #292d54;
+  font-family: "Comic Sans MS", sans-serif;
+}
+.input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  color: #292d54;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.genderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: #292d54;
+  font-family: "Comic Sans MS", sans-serif;
+}
+.saveBtn {
+  width: 25%;
+  padding: 10px;
+  background-color: #ca5454;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
